@@ -6,60 +6,18 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="add_img();">
     <main>
         <div class="main__block">
             <div class="gallery__big">
                 <img id="big" class="gallery__img-big big_animation" src="img/Paris.jpg" alt="">
-                
-                <div class="animation">
-                    <div class="black__block">
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                    </div>
-                    <div class="black__block">
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                    </div>
-                    <div class="black__block">
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                    </div>
-                    <div class="black__block">
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                        <div class="black__block_style"></div>
-                    </div>
+                <div id="animation_img" class="animation"> 
                 </div>
             </div>
-            <div class="gallery__mini">
-                <img class="gallery__img" src="img/orange.jpg" alt="" onclick="first_img(arg=this.src), animation(),clear()">
-                <img class="gallery__img" src="img/peresvet.jpg" alt="" onclick="first_img(arg=this.src), animation(),clear()">
-                <img class="gallery__img" src="img/toskana.jpg" alt="" onclick="first_img(arg=this.src), animation(),clear()">
-                <img class="gallery__img" src="img/trees.jpg" alt="" onclick="first_img(arg=this.src), animation(),clear()">
-                <img class="gallery__img" src="img/van-gog.jpg" alt="" onclick="first_img(arg=this.src), animation(),clear()">
+            <div class="gallery__mini"> 
             </div>
         </div>
     </main>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
