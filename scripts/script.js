@@ -1,11 +1,15 @@
-function add_img(){
-    var img_html=`
+function add_img(){ 
+    var big_img_html=' <img id="big" class="gallery__img-big big_animation" src="img/Paris.jpg" alt="">';
+    var mini_img_html=`
     <img class="gallery__img" src="img/orange.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
     <img class="gallery__img" src="img/peresvet.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
     <img class="gallery__img" src="img/toskana.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
     <img class="gallery__img" src="img/trees.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
-    <img class="gallery__img" src="img/van-gog.jpg" alt="" onclick="add_htmld(), first_img(arg=this.src), animation(),kill_div()">`
-    document.querySelector('div[class="gallery__mini"]').innerHTML=img_html;
+    <img class="gallery__img" src="img/van-gog.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">`
+    document.querySelector('div[class="big__img"]').innerHTML=big_img_html;
+    document.querySelector('div[class="gallery__mini"]').innerHTML=mini_img_html;
+   
+    
 }
 function add_html(){
     var text_html=`
