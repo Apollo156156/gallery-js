@@ -12,45 +12,21 @@ function add_img(){
     
 }
 function add_html(){
-    var text_html=`
-<div class="black__block">
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-</div>
-<div class="black__block">
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-</div>
-<div class="black__block">
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-</div>
-<div class="black__block">
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-    <div class="black__block_style"></div>
-</div>`
-    document.getElementById('animation_img').innerHTML=text_html;
+    var big_height=document.querySelector('div[class="big__img"]').offsetHeight/100;
+    var div_block=document.createElement('div');
+    div_block.classList.add("black__block");
+    var div_block_mini=document.createElement('div');
+    div_block_mini.classList.add("black__block_style");
     document.querySelector('div[class="gallery__mini"]').style.cssText="pointer-events:none;";
+    for(let i=0;i<big_height;i++){
+        document.getElementById('animation_img').appendChild(div_block.cloneNode(true)); 
+        for(let x=0;x<7;x++){
+        document.querySelectorAll('div[class="black__block"]')[i].appendChild(div_block_mini.cloneNode(true)); 
+    }
+    }
+    
+    
+   
 }
 function first_img(arg){ 
     
