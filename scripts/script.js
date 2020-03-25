@@ -1,15 +1,20 @@
 function add_img(){ 
-    var big_img_html=' <img id="big" class="gallery__img-big big_animation" src="img/Paris.jpg" alt="">';
-    var mini_img_html=`
-    <img class="gallery__img" src="img/orange.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
-    <img class="gallery__img" src="img/peresvet.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
-    <img class="gallery__img" src="img/toskana.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
-    <img class="gallery__img" src="img/trees.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">
-    <img class="gallery__img" src="img/van-gog.jpg" alt="" onclick="add_html(), first_img(arg=this.src), animation(),kill_div()">`
-    document.querySelector('div[class="big__img"]').innerHTML=big_img_html;
-    document.querySelector('div[class="gallery__mini"]').innerHTML=mini_img_html;
-   
+    //var big_img_html=' <img id="big" class="gallery__img-big big_animation" src="img/Paris.jpg" alt="">';
+    var big_img_html=document.createElement('img');
+    big_img_html.setAttribute("id","big");
+    big_img_html.setAttribute("class","gallery__img-big big_animation");
+    big_img_html.setAttribute("src","img/Paris.jpg");
+    document.querySelector('div[class="big__img"]').appendChild(big_img_html);
     
+    let img="img/";
+    let arr= [img+"orange.jpg",img+"peresvet.jpg",img+"toskana.jpg",img+"trees.jpg",img+"van-gog.jpg"];
+    var img_block=document.createElement('img');
+    img_block.classList.add("gallery__img");
+    img_block.setAttribute("onclick","add_html(), first_img(arg=this.src), animation(),kill_div()")
+    for(var i=0;i<5;i++){
+        document.querySelector('div[class="gallery__mini"]').appendChild(img_block.cloneNode(true)); 
+        document.querySelectorAll('img[class="gallery__img"]')[i].setAttribute("src",arr[i]);
+    }  
 }
 function add_html(){
     var big_height=document.querySelector('div[class="big__img"]').offsetHeight/100;
@@ -23,27 +28,21 @@ function add_html(){
         for(let x=0;x<7;x++){
         document.querySelectorAll('div[class="black__block"]')[i].appendChild(div_block_mini.cloneNode(true)); 
     }
-    }
-    
-    
-   
+    } 
 }
 function first_img(arg){ 
     
-
     document.querySelector('div[class="animation"]').style.opacity="0";
     var but = document.querySelectorAll('.black__block_style');       
     for (i = 0, len = but.length; i < len; i++) { 
             document.querySelectorAll('div[class="black__block_style"]')[i].style.cssText="opacity:1; transition: opacity 0s";
     }  
 
-
     var but = document.querySelectorAll('.gallery__img');
     for (i = 0, len = but.length; i < len; i++) { 
         var img_mini=document.querySelectorAll('img[class="gallery__img"')[i].src;
 
         if(img_mini==arg){
-           
             var img_date = document.getElementById('big').src;
             document.getElementById('big').src=arg; 
             document.querySelectorAll('img[class="gallery__img"')[i].src=img_date; 
