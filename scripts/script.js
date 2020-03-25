@@ -11,10 +11,10 @@ function add_img(){
     var img_block=document.createElement('img');
     img_block.classList.add("gallery__img");
     img_block.setAttribute("onclick","add_html(), first_img(arg=this.src), animation(),kill_div()")
-    for(var i=0;i<5;i++){
+    for(var i=0;i<link_img.length;i++){
         document.querySelector('div[class="gallery__mini"]').appendChild(img_block.cloneNode(true)); 
         document.querySelectorAll('img[class="gallery__img"]')[i].setAttribute("src",link_img[i]);
-    }  
+    } 
 }
 
 function add_html(){
