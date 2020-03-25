@@ -5,17 +5,18 @@ function add_img(){
     big_img_html.setAttribute("class","gallery__img-big big_animation");
     big_img_html.setAttribute("src","img/Paris.jpg");
     document.querySelector('div[class="big__img"]').appendChild(big_img_html);
-    
-    let img="img/";
-    let arr= [img+"orange.jpg",img+"peresvet.jpg",img+"toskana.jpg",img+"trees.jpg",img+"van-gog.jpg"];
+
+    let folder="img/";
+    let link_img= [folder+"orange.jpg",folder+"peresvet.jpg",folder+"toskana.jpg",folder+"trees.jpg",folder+"van-gog.jpg"];
     var img_block=document.createElement('img');
     img_block.classList.add("gallery__img");
     img_block.setAttribute("onclick","add_html(), first_img(arg=this.src), animation(),kill_div()")
     for(var i=0;i<5;i++){
         document.querySelector('div[class="gallery__mini"]').appendChild(img_block.cloneNode(true)); 
-        document.querySelectorAll('img[class="gallery__img"]')[i].setAttribute("src",arr[i]);
+        document.querySelectorAll('img[class="gallery__img"]')[i].setAttribute("src",link_img[i]);
     }  
 }
+
 function add_html(){
     var big_height=document.querySelector('div[class="big__img"]').offsetHeight/100;
     var div_block=document.createElement('div');
